@@ -1,0 +1,7 @@
+%tr{:id => "bill_#{bill.id}"}
+  %td= bill.description
+  %td= bill.payable_to
+  %td= localize bill.due_date
+  %td= bill.amount
+  %td= link_to "Edit",edit_bill_path(bill)
+  %td= link_to "Delete", bill, :method => :delete, :confirm => "Are you sure?"

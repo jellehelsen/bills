@@ -4,6 +4,8 @@ gem 'rails', '3.0.1'
 gem 'mongoid', '2.0.0.beta.19'
 gem 'bson_ext'
 gem 'haml'
+gem 'jquery-rails'
+gem 'simple_form'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -31,5 +33,6 @@ gem 'haml'
 group :development, :test do
   gem 'webrat'
   gem 'rspec-rails'
+  gem 'ruby-debug'
 end
 gem "rails3-generators", :group => :development
