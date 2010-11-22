@@ -30,10 +30,11 @@ div.red {
   border: 2px solid red; }
 
 div.amount {
-  width: 60px !important; }
+  width: 80px !important;
+  text-align: right; }
 
 div.due_date {
-  width: 100px !important; }
+  width: 80px !important; }
 
 div.edit_link {
   width: auto !important; }
@@ -48,6 +49,13 @@ div.input {
   div.input input {
     width: 250px; }
   div.input input#bill_amount {
-    width: 60px; }
+    width: 80px; }
   div.input input#bill_due_date {
-    width: 100px; }
+    width: 80px; }
+
+div#sum {
+  position: relative;
+  left: 620px;
+  width: 80px !important;
+  text-align: right;
+  font-weight: bold; }
