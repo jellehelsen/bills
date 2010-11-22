@@ -1,4 +1,7 @@
-$("#{escape_javascript( render :partial => 'bill', :locals => {:bill => @bill})} ").hide().insertBefore("##{@before_id}").fadeIn(2000);
+- if @before_id.nil?
+  $('#bills').append($("#{escape_javascript( render :partial => 'bill', :locals => {:bill => @bill})} ").hide().slideDown());
+- else
+  $("#{escape_javascript( render :partial => 'bill', :locals => {:bill => @bill})} ").hide().insertBefore("##{@before_id}").slideDown();
 
-$("table tr:nth-child(2)").html("#{escape_javascript(render :partial => 'form', :locals => {:bill => Bill.new})}")
+$("#form").html("#{escape_javascript(render :partial => 'form', :locals => {:bill => Bill.new})}")
 

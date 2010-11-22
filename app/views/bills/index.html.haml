@@ -1,15 +1,10 @@
 %h1 Bills
 #errors
 #notice
+
+#form
+  = render :partial => 'form', :locals => { :bill => @bill }
+
 #bills
-  %table
-    %tr
-      %td Description
-      %td Payable To
-      %td Due Date
-      %td Amount
-      %td
-    %tr
-      = render :partial => 'form', :locals => { :bill => @bill }
-    - @bills.each do |bill|
-      = render :partial => 'bill', :locals => { :bill => bill }
+  - @bills.each do |bill|
+    = render :partial => 'bill', :locals => { :bill => bill }

@@ -9,6 +9,15 @@ class Bill
   validates_presence_of :description, :payable_to, :amount, :due_date
 
   def payed?
-    !payable_to.nil?
+    !paid_on.nil?
+  end
+
+  def view_class
+    today = Date.today
+
+    return :green if payed?
+    return :red if (due_date < today)
+    return :green if (due_date > today + 10)
+    return :orange
   end
 end

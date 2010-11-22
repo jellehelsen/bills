@@ -1,5 +1,5 @@
 #content
-  width: 700px
+  width: 800px
   margin: auto
   table
     width: 700px
@@ -9,30 +9,37 @@
 div.bill
   position: relative
   height: 35px
-span.description
-  position: absolute
-  left: 5px
-  top: 5px
-
-span.payable_to
-  position: absolute
-  left: 5px
-  top: 20px
-span.amount
-  position: absolute
-  right: 5px
-  top: 20px
-span.due_date
-  position: absolute
-  right: 5px
-  top: 5px
-span.edit_link
-  position: absolute
-  right: -25px
-  top: 5px
-span.destroy_link
-  display: none
-  position: absolute
-  right: 5px
-  top: 5px
-  
+  margin: 2px
+  border-radius: 5px
+  > div
+    display: inline-block
+    width: 250px
+    padding: 1px
+    margin: 2px
+div.green
+  background: rgba(0,255,0,0.3)
+  border: 2px solid green
+div.orange
+  background: rgba(255,124,0,0.3)
+  border: 2px solid rgb(255,124,0)
+div.red
+  background: rgba(255,0,0,0.3)
+  border: 2px solid red
+div.amount
+  width: 50px !important
+div.due_date
+  width: 100px !important
+div.edit_link
+  width: auto !important
+div.destroy_link
+  width: auto !important
+div.input
+  display: inline-block
+  label
+    display: block
+  input
+    width: 250px
+  input#bill_amount
+    width: 50px
+  input#bill_due_date
+    width: 100px

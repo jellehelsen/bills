@@ -53,7 +53,7 @@ class BillsController < ApplicationController
         format.js do 
           @bills = Bill.asc(:due_date)
           position = @bills.to_a.index {|b| b.id == @bill.id}
-          @before_id = "bill_#{@bills[position+1].id}"
+          @before_id = "bill_#{@bills[position+1].id}" rescue nil
         end  
         format.html { redirect_to(bills_path, :notice => 'Bill was successfully created.') }
         format.xml  { render :xml => @bill, :status => :created, :location => @bill }
@@ -87,6 +87,7 @@ class BillsController < ApplicationController
     @bill.destroy
 
     respond_to do |format|
+      format.js
       format.html { redirect_to(bills_url) }
       format.xml  { head :ok }
     end

@@ -1,6 +1,6 @@
-= form_for bill, :remote => true do |f|
-  %td= f.text_field :description
-  %td= f.text_field :payable_to
-  %td= f.text_field :due_date
-  %td= f.text_field :amount
-  %td= f.submit
+= simple_form_for bill, :remote => true do |f|
+  = f.input :description
+  = f.input :payable_to
+  = f.input :due_date
+  = f.input :amount
+  = f.button :submit
