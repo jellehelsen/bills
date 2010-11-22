@@ -30,7 +30,7 @@ div.red {
   border: 2px solid red; }
 
 div.amount {
-  width: 50px !important; }
+  width: 60px !important; }
 
 div.due_date {
   width: 100px !important; }
@@ -48,6 +48,6 @@ div.input {
   div.input input {
     width: 250px; }
   div.input input#bill_amount {
-    width: 50px; }
+    width: 60px; }
   div.input input#bill_due_date {
     width: 100px; }

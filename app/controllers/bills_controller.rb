@@ -39,7 +39,10 @@ class BillsController < ApplicationController
   # GET /bills/1/edit
   def edit
     @bill = Bill.find(params[:id])
-    render :action => 'index'
+    respond_to do |format|
+      format.js
+      format.html {render :action => 'index' }
+    end
   end
 
   # POST /bills
@@ -71,6 +74,7 @@ class BillsController < ApplicationController
 
     respond_to do |format|
       if @bill.update_attributes(params[:bill])
+        format.js
         format.html { redirect_to(bills_path, :notice => 'Bill was successfully updated.') }
         format.xml  { head :ok }
       else

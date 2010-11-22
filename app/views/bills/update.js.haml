@@ -1,0 +1,3 @@
+$("#bill_#{@bill.id}").replaceWith("#{escape_javascript(render :partial => 'bill', :locals => {:bill => @bill})}")
+$("#form").html("#{escape_javascript(render :partial => 'form', :locals => {:bill => Bill.new})}")
+

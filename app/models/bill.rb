@@ -2,7 +2,7 @@ class Bill
   include Mongoid::Document
   field :description, :type => String
   field :payable_to, :type => String
-  field :amount, :type => BigDecimal
+  field :amount, :type => Float
   field :paid_on, :type => Date
   field :due_date, :type => Date
 

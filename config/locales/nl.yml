@@ -23,7 +23,7 @@ nl:
           mb: MB
     currency: 
       format: 
-        format: "%u %n"
+        format: "%n %u"
         unit: !binary |
           4oKs
 
