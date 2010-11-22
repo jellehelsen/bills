@@ -1,0 +1,53 @@
+#content {
+  width: 800px;
+  margin: auto; }
+  #content table {
+    width: 700px; }
+    #content table input {
+      width: 100px; }
+
+div.bill {
+  position: relative;
+  height: 35px;
+  margin: 2px;
+  border-radius: 5px; }
+  div.bill > div {
+    display: inline-block;
+    width: 250px;
+    padding: 1px;
+    margin: 2px; }
+
+div.green {
+  background: rgba(0, 255, 0, 0.3);
+  border: 2px solid green; }
+
+div.orange {
+  background: rgba(255, 124, 0, 0.3);
+  border: 2px solid #ff7c00; }
+
+div.red {
+  background: rgba(255, 0, 0, 0.3);
+  border: 2px solid red; }
+
+div.amount {
+  width: 60px !important; }
+
+div.due_date {
+  width: 100px !important; }
+
+div.edit_link {
+  width: auto !important; }
+
+div.destroy_link {
+  width: auto !important; }
+
+div.input {
+  display: inline-block; }
+  div.input label {
+    display: block; }
+  div.input input {
+    width: 250px; }
+  div.input input#bill_amount {
+    width: 60px; }
+  div.input input#bill_due_date {
+    width: 100px; }

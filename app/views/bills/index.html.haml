@@ -1,0 +1,10 @@
+%h1 Bills
+#errors
+#notice
+
+#form
+  = render :partial => 'form', :locals => { :bill => @bill }
+
+#bills
+  - @bills.each do |bill|
+    = render :partial => 'bill', :locals => { :bill => bill }

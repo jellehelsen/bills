@@ -1,0 +1,3 @@
+[submodule "lib/generators"]
+	path = lib/generators
+	url = git://github.com/pjb3/rails3-generators.git
