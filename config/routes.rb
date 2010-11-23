@@ -1,5 +1,7 @@
 Bills::Application.routes.draw do
-  resources :bills
+  resources :bills do 
+    put :pay, :on => :member
+  end
   root :to => "bills#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.

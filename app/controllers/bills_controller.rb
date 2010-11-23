@@ -27,14 +27,15 @@ class BillsController < ApplicationController
 
   # GET /bills/new
   # GET /bills/new.xml
-  #def new
-    #@bill = Bill.new
+  def new
+    @bill = Bill.new
 
-    #respond_to do |format|
-      #format.html # new.html.erb
-      #format.xml  { render :xml => @bill }
-    #end
-  #end
+    respond_to do |format|
+      format.js
+      format.html # new.html.erb
+      format.xml  { render :xml => @bill }
+    end
+  end
 
   # GET /bills/1/edit
   def edit
@@ -96,6 +97,16 @@ class BillsController < ApplicationController
       format.js
       format.html { redirect_to(bills_url) }
       format.xml  { head :ok }
+    end
+  end
+
+  def pay
+    @bill = Bill.find(params[:id])
+    @bill.pay!
+    @bill.save!
+    flash[:notice] = "Bill was marked as payed!"
+    respond_to do |format|
+      format.js
     end
   end
 end

@@ -2,6 +2,11 @@
   font-family: "Museo Sans"
   src: url("/stylesheets/MuseoSans_500.otf")
 
+@mixin action_link
+  img
+    width: 20px
+    vertical-align: top
+    border: none
 body
   font-family: "Museo Sans"
   font-size: 12px
@@ -40,8 +45,13 @@ div.due_date
   width: 80px !important
 div.edit_link
   width: auto !important
+  @include action_link
 div.destroy_link
   width: auto !important
+  @include action_link
+div.pay_link
+  width: auto !important
+  @include action_link
 div.input
   display: inline-block
   label
@@ -49,10 +59,30 @@ div.input
     font-size: 15px
   input
     width: 250px
-  input#bill_amount
-    width: 80px
-  input#bill_due_date
-    width: 80px
+    border: 1px solid white
+    font-family: "Museo Sans"
+    font-size: 15px
+    &:focus
+      outline: none
+input#bill_amount
+  width: 80px
+input#bill_due_date
+  width: 80px
+.button
+  background: blue
+  border: 2px solid white
+  border-radius: 5px
+  -moz-border-radius: 5px
+  color: white
+  padding: 5px
+  margin: 2px
+  vertical-align: bottom
+  display: block
+  text-decoration: none
+  text-align: center
+  font:
+    family: "Museo Sans"
+    size: 15px
 div#sum
   position: relative
   left: 613px
@@ -94,4 +124,11 @@ abbr
   :margin 10px 20px
   :background-color #CFC
   :border solid 1px #6C6
-    
+#form
+  border-radius: 5px
+  -moz-border-radius: 5px
+  background: #6633FF 
+  border: 2px solid blue
+  padding: 5px
+  color: white
+  margin: 2px
