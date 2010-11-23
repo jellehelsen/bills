@@ -4,3 +4,9 @@
   = f.input :due_date
   = f.input :amount
   = f.button :submit
+:javascript
+  $(function(){
+    var availableTags = #{(@bills.distinct(:payable_to).to_json)};
+    $("#bill_payable_to").autocomplete({source: availableTags});
+  });
+
