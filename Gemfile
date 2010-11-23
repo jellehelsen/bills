@@ -6,7 +6,7 @@ gem 'bson_ext'
 gem 'haml'
 gem 'jquery-rails'
 gem 'simple_form'
-
+gem 'validates_timeliness', '~> 3.0.0'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
