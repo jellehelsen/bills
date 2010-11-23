@@ -3,7 +3,7 @@ class Bill
   field :description, :type => String
   field :payable_to, :type => String
   field :amount, :type => Float
-  field :paid_on, :type => Date
+  field :paid_on, :type => Time
   field :due_date, :type => Date
 
   validates_presence_of :description, :payable_to, :amount, :due_date
@@ -21,5 +21,9 @@ class Bill
     return :red if (due_date < today)
     return :green if (due_date > today + 10)
     return :orange
+  end
+
+  def pay!
+    self.paid_on = Time.now
   end
 end

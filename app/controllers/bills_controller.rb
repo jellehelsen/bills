@@ -99,4 +99,14 @@ class BillsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  def pay
+    @bill = Bill.find(params[:id])
+    @bill.pay!
+    @bill.save!
+    flash[:notice] = "Bill was marked as payed!"
+    respond_to do |format|
+      format.js
+    end
+  end
 end
