@@ -1,6 +1,6 @@
 %h1 Bills
-#errors
-#notice
+#errors{:style => "display:none"}
+#notice{:style => "display:none"}
 
 #form
   = render :partial => 'form', :locals => { :bill => @bill }
@@ -8,3 +8,5 @@
 #bills
   - @bills.each do |bill|
     = render :partial => 'bill', :locals => { :bill => bill }
+  #total
+    #sum= number_to_currency(@bills.sum(:amount))

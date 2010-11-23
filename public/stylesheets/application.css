@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Museo Sans";
+  src: url("/stylesheets/MuseoSans_500.otf"); }
+
+body {
+  font-family: "Museo Sans";
+  font-size: 12px; }
+
 #content {
   width: 800px;
   margin: auto; }
@@ -10,7 +18,8 @@ div.bill {
   position: relative;
   height: 35px;
   margin: 2px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  -moz-border-radius: 5px; }
   div.bill > div {
     display: inline-block;
     width: 250px;
@@ -30,24 +39,116 @@ div.red {
   border: 2px solid red; }
 
 div.amount {
-  width: 60px !important; }
+  width: 80px !important;
+  text-align: right; }
 
 div.due_date {
-  width: 100px !important; }
+  width: 80px !important; }
 
 div.edit_link {
   width: auto !important; }
+  div.edit_link img {
+    width: 20px;
+    vertical-align: top;
+    border: none; }
 
 div.destroy_link {
   width: auto !important; }
+  div.destroy_link img {
+    width: 20px;
+    vertical-align: top;
+    border: none; }
+
+div.pay_link {
+  width: auto !important; }
+  div.pay_link img {
+    width: 20px;
+    vertical-align: top;
+    border: none; }
 
 div.input {
   display: inline-block; }
   div.input label {
-    display: block; }
+    display: block;
+    font-size: 15px; }
   div.input input {
-    width: 250px; }
-  div.input input#bill_amount {
-    width: 60px; }
-  div.input input#bill_due_date {
-    width: 100px; }
+    width: 250px;
+    border: 1px solid white;
+    font-family: "Museo Sans";
+    font-size: 15px; }
+    div.input input:focus {
+      outline: none; }
+
+input#bill_amount {
+  width: 80px; }
+
+input#bill_due_date {
+  width: 80px; }
+
+.button {
+  background: blue;
+  border: 2px solid white;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  color: white;
+  padding: 5px;
+  margin: 2px;
+  vertical-align: bottom;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  font-family: "Museo Sans";
+  font-size: 15px; }
+
+div#sum {
+  position: relative;
+  left: 613px;
+  width: 80px !important;
+  text-align: right;
+  font-weight: bold;
+  font-size: 15px; }
+
+abbr {
+  font-family: "Museo Sans";
+  font-size: 24pt;
+  position: relative;
+  top: 12px;
+  border: none; }
+
+#errors {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  background-color: #ffcccc;
+  border: solid 1px #cc6666; }
+  #errors h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #cc0000;
+    color: white; }
+  #errors ul li {
+    font-size: 12px;
+    list-style: square; }
+
+#notice {
+  color: green;
+  padding: 5px 8px;
+  margin: 10px 20px;
+  background-color: #ccffcc;
+  border: solid 1px #66cc66; }
+
+#form {
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  background: #6633ff;
+  border: 2px solid blue;
+  padding: 5px;
+  color: white;
+  margin: 2px; }
