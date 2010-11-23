@@ -59,6 +59,7 @@ nl:
       taken: is niet beschikbaar
       inclusion: is niet in de lijst opgenomen
       not_a_number: is geen getal
+      invalid_date: is geen datum
     template: 
       body: "Controleer alstublieft de volgende velden:"
       header: 

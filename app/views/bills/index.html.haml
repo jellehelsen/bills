@@ -1,6 +1,6 @@
 %h1 Bills
-#errors
-#notice
+#errors{:style => "display:none"}
+#notice{:style => "display:none"}
 
 #form
   = render :partial => 'form', :locals => { :bill => @bill }
