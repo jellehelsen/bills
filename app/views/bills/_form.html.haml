@@ -3,7 +3,9 @@
   = f.input :payable_to
   = f.input :due_date
   = f.input :amount
-  = f.button :submit
+  %div{:style => "display:inline-block"}
+    = link_to "New", new_bill_path, :remote => true, :class => :button
+    = f.button :submit,"Save", :class => :button
 :javascript
   $(function(){
     var availableTags = #{(@bills.distinct(:payable_to).to_json)};

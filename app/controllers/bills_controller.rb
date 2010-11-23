@@ -27,14 +27,15 @@ class BillsController < ApplicationController
 
   # GET /bills/new
   # GET /bills/new.xml
-  #def new
-    #@bill = Bill.new
+  def new
+    @bill = Bill.new
 
-    #respond_to do |format|
-      #format.html # new.html.erb
-      #format.xml  { render :xml => @bill }
-    #end
-  #end
+    respond_to do |format|
+      format.js
+      format.html # new.html.erb
+      format.xml  { render :xml => @bill }
+    end
+  end
 
   # GET /bills/1/edit
   def edit

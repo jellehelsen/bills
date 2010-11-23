@@ -57,11 +57,30 @@ div.input {
     display: block;
     font-size: 15px; }
   div.input input {
-    width: 250px; }
-  div.input input#bill_amount {
-    width: 80px; }
-  div.input input#bill_due_date {
-    width: 80px; }
+    width: 250px;
+    border: 1px solid white;
+    font-family: "Museo Sans";
+    font-size: 15px; }
+    div.input input:focus {
+      outline: none; }
+
+input#bill_amount {
+  width: 80px; }
+
+input#bill_due_date {
+  width: 80px; }
+
+.button {
+  background: blue;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  font-family: "Museo Sans";
+  font-size: 15px; }
 
 div#sum {
   position: relative;
@@ -106,3 +125,12 @@ abbr {
   margin: 10px 20px;
   background-color: #ccffcc;
   border: solid 1px #66cc66; }
+
+#form {
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  background: #6633ff;
+  border: 2px solid blue;
+  padding: 5px;
+  color: white;
+  margin: 2px; }
