@@ -14,6 +14,13 @@ class Bill
     !paid_on.nil?
   end
 
+  def payed=(is_payed)
+    if is_payed.to_i == 1
+      self.pay!
+    else
+      self.paid_on = nil
+    end
+  end
   def view_class
     today = Date.today
 
