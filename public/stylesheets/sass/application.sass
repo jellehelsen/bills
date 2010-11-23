@@ -2,6 +2,10 @@
   font-family: "Museo Sans"
   src: url("/stylesheets/MuseoSans_500.otf")
 
+@mixin action_link
+  img
+    width: 20px
+    vertical-align: top
 body
   font-family: "Museo Sans"
   font-size: 12px
@@ -40,8 +44,13 @@ div.due_date
   width: 80px !important
 div.edit_link
   width: auto !important
+  @include action_link
 div.destroy_link
   width: auto !important
+  @include action_link
+div.pay_link
+  width: auto !important
+  @include action_link
 div.input
   display: inline-block
   label

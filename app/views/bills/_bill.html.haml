@@ -3,6 +3,6 @@
   %div{:class => :payable_to}= bill.payable_to
   %div{:class => :due_date}= bill.due_date
   %div{:class => :amount}= number_to_currency bill.amount
-  %div{:class => :edit_link}= link_to "Edit",edit_bill_path(bill), :remote => true
-  %div{:class => :destroy_link}= link_to "Delete", bill, :method => :delete, :confirm => "Are you sure?", :remote => true
-  %div{:class => :pay_link}= link_to "Pay", pay_bill_path(bill), :method => :put, :remote => true
+  %div{:class => :edit_link}= link_to image_tag("pencil.png"), edit_bill_path(bill), :remote => true
+  %div{:class => :destroy_link}= link_to image_tag("button_cross.png"), bill, :method => :delete, :confirm => "Are you sure?", :remote => true
+  %div{:class => :pay_link}= link_to image_tag("button_check.png"), pay_bill_path(bill), :method => :put, :remote => true

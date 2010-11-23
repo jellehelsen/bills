@@ -47,9 +47,21 @@ div.due_date {
 
 div.edit_link {
   width: auto !important; }
+  div.edit_link img {
+    width: 20px;
+    vertical-align: top; }
 
 div.destroy_link {
   width: auto !important; }
+  div.destroy_link img {
+    width: 20px;
+    vertical-align: top; }
+
+div.pay_link {
+  width: auto !important; }
+  div.pay_link img {
+    width: 20px;
+    vertical-align: top; }
 
 div.input {
   display: inline-block; }
