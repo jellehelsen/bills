@@ -49,19 +49,22 @@ div.edit_link {
   width: auto !important; }
   div.edit_link img {
     width: 20px;
-    vertical-align: top; }
+    vertical-align: top;
+    border: none; }
 
 div.destroy_link {
   width: auto !important; }
   div.destroy_link img {
     width: 20px;
-    vertical-align: top; }
+    vertical-align: top;
+    border: none; }
 
 div.pay_link {
   width: auto !important; }
   div.pay_link img {
     width: 20px;
-    vertical-align: top; }
+    vertical-align: top;
+    border: none; }
 
 div.input {
   display: inline-block; }
@@ -86,8 +89,11 @@ input#bill_due_date {
   background: blue;
   border: 2px solid white;
   border-radius: 5px;
+  -moz-border-radius: 5px;
   color: white;
   padding: 5px;
+  margin: 2px;
+  vertical-align: bottom;
   display: block;
   text-decoration: none;
   text-align: center;
