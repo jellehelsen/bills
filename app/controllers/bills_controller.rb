@@ -55,9 +55,11 @@ class BillsController < ApplicationController
     respond_to do |format|
       if @bill.save
         format.js do 
+          flash[:notice] = 'Bill was successfully created.'
           @bills = Bill.asc(:due_date)
           position = @bills.to_a.index {|b| b.id == @bill.id}
-          @before_id = "bill_#{@bills[position+1].id}" rescue nil
+          next_bill = @bills[position+1]
+          @before_id = next_bill.nil? ? nil : "bill_#{@bills[position+1].id}"
         end  
         format.html { redirect_to(bills_path, :notice => 'Bill was successfully created.') }
         format.xml  { render :xml => @bill, :status => :created, :location => @bill }
