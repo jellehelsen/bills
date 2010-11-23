@@ -4,12 +4,14 @@
   = f.input :due_date
   = f.input :amount
   = f.check_box :payed?
-  %div{:style => "display:inline-block"}
+  %div{:style => "display:inline-block;vertical-align:bottom"}
     = link_to "New", new_bill_path, :remote => true, :class => :button
     = f.button :submit,"Save", :class => :button
 :javascript
   $(function(){
     var availableTags = #{(@bills.distinct(:payable_to).to_json)};
     $("#bill_payable_to").autocomplete({source: availableTags});
+    $.datepicker.setDefaults( $.datepicker.regional[ "nl" ] );
+    $( "#bill_due_date" ).datepicker( $.datepicker.regional[ "nl" ] );
   });
 
