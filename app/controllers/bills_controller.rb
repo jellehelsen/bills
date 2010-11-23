@@ -61,6 +61,7 @@ class BillsController < ApplicationController
         format.html { redirect_to(bills_path, :notice => 'Bill was successfully created.') }
         format.xml  { render :xml => @bill, :status => :created, :location => @bill }
       else
+        format.js
         format.html { render :action => "index" }
         format.xml  { render :xml => @bill.errors, :status => :unprocessable_entity }
       end
@@ -74,10 +75,11 @@ class BillsController < ApplicationController
 
     respond_to do |format|
       if @bill.update_attributes(params[:bill])
-        format.js
+        format.js   { flash[:notice] = "Bill was successfully updated."}
         format.html { redirect_to(bills_path, :notice => 'Bill was successfully updated.') }
         format.xml  { head :ok }
       else
+        format.js 
         format.html { render :action => "edit" }
         format.xml  { render :xml => @bill.errors, :status => :unprocessable_entity }
       end
