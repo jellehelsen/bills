@@ -2,6 +2,9 @@
   font-family: "Museo Sans";
   src: url("/stylesheets/MuseoSans_500.otf"); }
 
+html {
+  background-color: white; }
+
 body {
   font-family: "Museo Sans";
   font-size: 12px; }
@@ -152,3 +155,27 @@ abbr {
   padding: 5px;
   color: white;
   margin: 2px; }
+
+#user_nav {
+  float: right; }
+
+#login {
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  margin-top: 200px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 10px 10px 5px #666666; }
+  #login label {
+    font-family: "Museo Sans";
+    font-size: 20px; }
+  #login input {
+    height: 30px;
+    width: 95%;
+    margin: 10px;
+    font-family: "Museo Sans";
+    font-size: 20px; }
+    #login input#user_remember_me {
+      width: auto; }

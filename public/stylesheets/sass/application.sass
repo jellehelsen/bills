@@ -2,11 +2,37 @@
   font-family: "Museo Sans"
   src: url("/stylesheets/MuseoSans_500.otf")
 
+@mixin large_museo
+  font:
+    family: "Museo Sans"
+    size: 20px
+
 @mixin action_link
   img
     width: 20px
     vertical-align: top
     border: none
+@mixin user_form
+  width: 500px
+  height: 500px
+  margin: auto
+  margin-top: 200px
+  background-color: white
+  //border: 1px solid black
+  padding: 5px
+  border-radius: 5px
+  -webkit-box-shadow: 10px 10px 5px #666
+  label
+    @include large_museo
+  input
+    height: 30px
+    width: 95%
+    margin: 10px
+    @include large_museo
+    &#user_remember_me
+      width: auto
+html
+  background-color: white
 body
   font-family: "Museo Sans"
   font-size: 12px
@@ -132,3 +158,8 @@ abbr
   padding: 5px
   color: white
   margin: 2px
+#user_nav
+  float: right
+
+#login
+  @include user_form
