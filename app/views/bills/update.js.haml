@@ -9,4 +9,5 @@
   $("#notice").html("#{escape_javascript(flash[:notice])}")
   $("#notice").show(300)
   $("#form").html("#{escape_javascript(render :partial => 'form', :locals => {:bill => Bill.new})}")
-
+  $("#sum").html("#{number_to_currency @bills.sum(:amount)}")
+  
