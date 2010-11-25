@@ -10,9 +10,10 @@
 @mixin action_link
   img
     width: 20px
-    vertical-align: top
+    vertical-align: middle
     border: none
 @mixin user_form
+  border: 3px solid black
   width: 500px
   height: 500px
   margin: auto
@@ -47,16 +48,19 @@ body
 div.bill
   position: relative
   height: 35px
+  line-height: 30px
   margin: 2px
   border-radius: 5px
   -moz-border-radius: 5px
+  font:
+    size: 13px
   > div
     display: inline-block
     width: 250px
     padding: 1px
     margin: 2px
 div.green
-  background: rgba(0,255,0,0.3)
+  background: rgba(0,255,0,0.4)
   border: 2px solid green
 div.orange
   background: rgba(255,124,0,0.3)
@@ -75,7 +79,7 @@ div.edit_link
 div.destroy_link
   width: auto !important
   @include action_link
-div.pay_link
+div.action_link
   width: auto !important
   @include action_link
 div.input
