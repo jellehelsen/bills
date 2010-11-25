@@ -1,4 +1,6 @@
 Bills::Application.routes.draw do
+  devise_for :users
+
   resources :bills do 
     put :pay, :on => :member
   end

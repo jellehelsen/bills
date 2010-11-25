@@ -7,6 +7,6 @@
 
 #bills
   - @bills.each do |bill|
-    = render :partial => 'bill', :locals => { :bill => bill }
+    = render :partial => 'bill', :locals => { :bill => bill } unless bill.new_record?
   #total
-    #sum= number_to_currency(@bills.sum(:amount))
+    #sum= number_to_currency(@bills.sum(:amount)||0)

@@ -5,7 +5,7 @@ class Bill
   field :amount, :type => Float
   field :paid_on, :type => Time
   field :due_date, :type => Date
-
+  embedded_in :user, :inverse_of => :bills
   validates_presence_of :description, :payable_to, :amount, :due_date
   validates_numericality_of :amount
   validates_date :due_date

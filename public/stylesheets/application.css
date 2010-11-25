@@ -2,6 +2,9 @@
   font-family: "Museo Sans";
   src: url("/stylesheets/MuseoSans_500.otf"); }
 
+html {
+  background-color: white; }
+
 body {
   font-family: "Museo Sans";
   font-size: 12px; }
@@ -17,9 +20,11 @@ body {
 div.bill {
   position: relative;
   height: 35px;
+  line-height: 30px;
   margin: 2px;
   border-radius: 5px;
-  -moz-border-radius: 5px; }
+  -moz-border-radius: 5px;
+  font-size: 13px; }
   div.bill > div {
     display: inline-block;
     width: 250px;
@@ -27,7 +32,7 @@ div.bill {
     margin: 2px; }
 
 div.green {
-  background: rgba(0, 255, 0, 0.3);
+  background: rgba(0, 255, 0, 0.4);
   border: 2px solid green; }
 
 div.orange {
@@ -49,21 +54,21 @@ div.edit_link {
   width: auto !important; }
   div.edit_link img {
     width: 20px;
-    vertical-align: top;
+    vertical-align: middle;
     border: none; }
 
 div.destroy_link {
   width: auto !important; }
   div.destroy_link img {
     width: 20px;
-    vertical-align: top;
+    vertical-align: middle;
     border: none; }
 
-div.pay_link {
+div.action_link {
   width: auto !important; }
-  div.pay_link img {
+  div.action_link img {
     width: 20px;
-    vertical-align: top;
+    vertical-align: middle;
     border: none; }
 
 div.input {
@@ -152,3 +157,28 @@ abbr {
   padding: 5px;
   color: white;
   margin: 2px; }
+
+#user_nav {
+  float: right; }
+
+#login {
+  border: 3px solid black;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  margin-top: 200px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  -webkit-box-shadow: 10px 10px 5px #666666; }
+  #login label {
+    font-family: "Museo Sans";
+    font-size: 20px; }
+  #login input {
+    height: 30px;
+    width: 95%;
+    margin: 10px;
+    font-family: "Museo Sans";
+    font-size: 20px; }
+    #login input#user_remember_me {
+      width: auto; }

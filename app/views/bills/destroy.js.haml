@@ -1,1 +1,3 @@
 $("#bill_#{@bill.id}").slideUp();
+$("#sum").html("#{number_to_currency(@bills.any? ? @bills.all.sum(:amount) : 0 )}")
+
