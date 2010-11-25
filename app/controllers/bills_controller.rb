@@ -1,8 +1,10 @@
 class BillsController < ApplicationController
+  before_filter :authenticate_user!
   before_filter :load
 
   def load
-    @bills = Bill.asc(:due_date)
+    @bills = current_user.bills.asc(:due_date)
+    #@bill = current_user.bills.build(params[:bill])
     @bill = Bill.new
   end
   # GET /bills
@@ -17,7 +19,7 @@ class BillsController < ApplicationController
   # GET /bills/1
   # GET /bills/1.xml
   def show
-    @bill = Bill.find(params[:id])
+    @bill = current_user.bills.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -39,7 +41,7 @@ class BillsController < ApplicationController
 
   # GET /bills/1/edit
   def edit
-    @bill = Bill.find(params[:id])
+    @bill = current_user.bills.find(params[:id])
     respond_to do |format|
       format.js
       format.html {render :action => 'index' }
@@ -49,17 +51,17 @@ class BillsController < ApplicationController
   # POST /bills
   # POST /bills.xml
   def create
-    @bills = Bill.all
     @bill = Bill.new(params[:bill])
+    current_user.bills << @bill
 
     respond_to do |format|
       if @bill.save
         format.js do 
           flash[:notice] = 'Bill was successfully created.'
-          @bills = Bill.asc(:due_date)
+          #@bills = Bill.asc(:due_date)
           position = @bills.to_a.index {|b| b.id == @bill.id}
           next_bill = @bills[position+1]
-          @before_id = next_bill.nil? ? nil : "bill_#{@bills[position+1].id}"
+          @before_id = next_bill.nil? ? "total" : "bill_#{@bills[position+1].id}"
         end  
         format.html { redirect_to(bills_path, :notice => 'Bill was successfully created.') }
         format.xml  { render :xml => @bill, :status => :created, :location => @bill }
@@ -74,7 +76,7 @@ class BillsController < ApplicationController
   # PUT /bills/1
   # PUT /bills/1.xml
   def update
-    @bill = Bill.find(params[:id])
+    @bill = current_user.bills.find(params[:id])
 
     respond_to do |format|
       if @bill.update_attributes(params[:bill])
@@ -92,9 +94,9 @@ class BillsController < ApplicationController
   # DELETE /bills/1
   # DELETE /bills/1.xml
   def destroy
-    @bill = Bill.find(params[:id])
+    @bill = current_user.bills.find(params[:id])
     @bill.destroy
-
+    @bills = current_user.bills
     respond_to do |format|
       format.js
       format.html { redirect_to(bills_url) }
@@ -103,7 +105,7 @@ class BillsController < ApplicationController
   end
 
   def pay
-    @bill = Bill.find(params[:id])
+    @bill = current_user.bills.find(params[:id])
     @bill.pay!
     @bill.save!
     flash[:notice] = "Bill was marked as payed!"
