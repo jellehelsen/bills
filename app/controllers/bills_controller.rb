@@ -58,7 +58,7 @@ class BillsController < ApplicationController
       if @bill.save
         format.js do 
           flash[:notice] = 'Bill was successfully created.'
-          #@bills = Bill.asc(:due_date)
+          @bills = current_user.bills.asc(:due_date)
           position = @bills.to_a.index {|b| b.id == @bill.id}
           next_bill = @bills[position+1]
           @before_id = next_bill.nil? ? "total" : "bill_#{@bills[position+1].id}"

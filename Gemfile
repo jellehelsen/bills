@@ -8,6 +8,7 @@ gem 'haml'
 gem 'jquery-rails'
 gem 'simple_form'
 gem 'validates_timeliness', '~> 3.0.0'
+gem 'fabrication'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
