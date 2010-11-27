@@ -36,5 +36,6 @@ group :development, :test do
   gem 'webrat'
   gem 'rspec-rails'
   gem 'ruby-debug'
+  gem 'mongoid-rspec'
 end
 gem "rails3-generators", :group => :development
