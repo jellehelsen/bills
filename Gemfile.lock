@@ -34,7 +34,10 @@ GEM
     bson (1.1.2)
     bson_ext (1.1.2)
     builder (2.1.2)
+    chronic (0.3.0)
     columnize (0.3.1)
+    delorean (0.2.1)
+      chronic
     devise (1.1.3)
       bcrypt-ruby (~> 2.1.2)
       warden (~> 0.10.7)
@@ -124,6 +127,7 @@ PLATFORMS
 
 DEPENDENCIES
   bson_ext
+  delorean
   devise (~> 1.1.3)
   fabrication
   haml

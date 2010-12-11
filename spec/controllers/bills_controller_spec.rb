@@ -23,12 +23,15 @@ describe BillsController do
     it "assigns all bills as @bills" do
       #Bill.stub(:all) { [mock_bill] }
       debugger
-      @user.bills[1].paid_on = Date.today - 1
+      Delorean.time_travel_to "5 days ago"
+      @user.bills[1].pay!
       @user.save
+      Delorean.back_to_the_present
       bill_count = @user.bills.count
       get :index
-      assigns(:bills).should eq(@user.bills.excludes(:paid_on.lt => Date.today).asc(:due_date).to_a)
+      #assigns(:bills).should eq(@user.bills.unpaid.asc(:due_date).to_a)
       assigns(:bills).count.should_not == bill_count
+      assigns(:bills).count.should == bill_count-1
     end
   end
 
