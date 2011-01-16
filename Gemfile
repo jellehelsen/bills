@@ -38,5 +38,6 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'ruby-debug'
   gem 'mongoid-rspec'
+  gem 'delorean'
 end
 gem "rails3-generators", :group => :development

@@ -10,6 +10,7 @@ class Bill
   validates_numericality_of :amount
   validates_date :due_date
 
+  scope :unpaid, excludes(:paid_on.lt => Date.today )
   def payed?
     !paid_on.nil?
   end

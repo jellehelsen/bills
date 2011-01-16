@@ -3,7 +3,7 @@ class BillsController < ApplicationController
   before_filter :load
 
   def load
-    @bills = current_user.bills.asc(:due_date)
+    @bills = current_user.bills.unpaid.asc(:due_date)
     #@bill = current_user.bills.build(params[:bill])
     @bill = Bill.new
   end
